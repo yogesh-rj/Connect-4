@@ -22,7 +22,7 @@
   <div class="row m-0">
     <div class="col-12 d-flex justify-content-center mb-2" *ngFor="let row of rows;index as i;">
       <div class="col-1 selector-box" *ngFor="let col of cols;index as j">
-        <div class="selection-circle" [class.red]="row[i+1][j] === 'p1'" [class.yellow]="row[i+1][j] === 'p2'"></div>
+        <div class="selection-circle" [class.red]="row[i+1][j] === 'a'" [class.yellow]="row[i+1][j] === 'b'"></div>
       </div>
     </div>
   </div>

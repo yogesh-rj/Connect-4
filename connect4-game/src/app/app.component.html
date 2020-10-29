@@ -4,25 +4,25 @@
       <h4 class=""> Connect 4 </h4>
     </div>
     <div class="col-12 d-flex justify-content-center">
-      <div class="col-2 text-center">
-        <input type="radio" [(ngModel)]="player1" /> Player 1
+      <div class="col-2 text-center" [class.red]="player1">
+        Player 1
       </div>
-      <div class="col-2 text-center">
-        <input type="radio" [(ngModel)]="player2" /> Player 2
+      <div class="btn col-2 text-center" [class.yellow]="player2">
+        Player 2
       </div>
     </div>
   </div>
   <div class="row m-0 mb-4">
     <div class="col-12 d-flex justify-content-center selector-section">
-      <div class="col-1 selector-box" *ngFor="let col of cols">
-        <div class="selection-circle"> </div>
+      <div class="col-1 selector-box" *ngFor="let col of cols;index as i;" (click)="selectColumn(i)">
+        <div class="selection-circle"></div>
       </div>
     </div>
   </div>
   <div class="row m-0">
-    <div class="col-12 d-flex justify-content-center mb-2" *ngFor="let row of rows">
-      <div class="col-1 selector-box" *ngFor="let col of cols">
-        <div class="selection-circle"> </div>
+    <div class="col-12 d-flex justify-content-center mb-2" *ngFor="let row of rows;index as i;">
+      <div class="col-1 selector-box" *ngFor="let col of cols;index as j">
+        <div class="selection-circle" [class.red]="row[i+1][j] === 'p1'" [class.yellow]="row[i+1][j] === 'p2'"></div>
       </div>
     </div>
   </div>

@@ -1,0 +1,39 @@
+<div class="content" role="main">
+  <div class="row m-0 mb-4">
+    <div class="col-12 text-center">
+      <h4 class=""> Connect 4 </h4>
+    </div>
+    <div class="col-12 d-flex justify-content-center">
+      <div class="col-2 text-center">
+        <input type="radio" [(ngModel)]="player1" /> Player 1
+      </div>
+      <div class="col-2 text-center">
+        <input type="radio" [(ngModel)]="player2" /> Player 2
+      </div>
+    </div>
+  </div>
+  <div class="row m-0 mb-4">
+    <div class="col-12 d-flex justify-content-center selector-section">
+      <div class="col-1 selector-box" *ngFor="let col of cols">
+        <div class="selection-circle"> </div>
+      </div>
+    </div>
+  </div>
+  <div class="row m-0">
+    <div class="col-12 d-flex justify-content-center mb-2" *ngFor="let row of rows">
+      <div class="col-1 selector-box" *ngFor="let col of cols">
+        <div class="selection-circle"> </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+  </div>
+</div>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

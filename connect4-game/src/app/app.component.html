@@ -4,22 +4,31 @@
       <h4 class=""> Connect 4 </h4>
     </div>
     <div class="col-12 d-flex justify-content-center">
-      <div class="col-2 text-center" [class.red]="player1">
+      <div class="btn col-2 text-center" [class.red]="player1">
         Player 1
       </div>
       <div class="btn col-2 text-center" [class.yellow]="player2">
         Player 2
       </div>
+      <div class="ml-4 col-2 text-center btn btn-secondary" (click)="resetGame()">
+        Reset Game
+      </div>
     </div>
   </div>
   <div class="row m-0 mb-4">
-    <div class="col-12 d-flex justify-content-center selector-section">
+    <div class="col-12 d-flex justify-content-center mb-2">
+      <h5>Click on disc to move it down:</h5>
+    </div>
+    <div class="col-12 d-flex justify-content-center selector-section" [class.disabled]="isMatched">
       <div class="col-1 selector-box" *ngFor="let col of cols;index as i;" (click)="selectColumn(i)">
-        <div class="selection-circle"></div>
+        <div class="selection-circle"[class.red]="player1" [class.yellow]="player2"></div>
       </div>
     </div>
   </div>
   <div class="row m-0">
+    <div class="col-12 d-flex justify-content-center mb-2">
+      <h5>Original gaming pad:</h5>
+    </div>
     <div class="col-12 d-flex justify-content-center mb-2" *ngFor="let row of rows;index as i;">
       <div class="col-1 selector-box" *ngFor="let col of cols;index as j">
         <div class="selection-circle" [class.red]="row[i+1][j] === 'a'" [class.yellow]="row[i+1][j] === 'b'"></div>
